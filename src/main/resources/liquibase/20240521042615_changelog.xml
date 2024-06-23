@@ -1,0 +1,40 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="QThoi (generated)" id="1716265586249-1">
+        <createTable tableName="db_empty_room">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="db_empty_roomPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="empty_room" type="INT"/>
+            <column name="end_date" type="datetime"/>
+            <column name="start_date" type="datetime"/>
+            <column name="kind_of_room_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1716265586249-2">
+        <addForeignKeyConstraint baseColumnNames="kind_of_room_id" baseTableName="db_empty_room" constraintName="FKloqfxiwwm6whxes8hcnwxxdv9" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_kind_room" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1716265586249-9">
+        <dropColumn columnName="empty_room" tableName="db_kind_room"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1716271916625-1">
+        <addColumn tableName="db_empty_room">
+            <column name="price" type="integer"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

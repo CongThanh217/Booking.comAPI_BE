@@ -1,0 +1,14 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="QThoi (generated)" id="1716865102854-1">
+        <addColumn tableName="db_service">
+            <column name="hotel_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1716865102854-2">
+        <addForeignKeyConstraint baseColumnNames="hotel_id" baseTableName="db_service" constraintName="FKorymynrobgowdowwu0p4tojkx" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_hotel" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1716906799823-8">
+        <dropColumn columnName="check_out" tableName="db_booking"/>
+    </changeSet>
+</databaseChangeLog>

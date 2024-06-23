@@ -1,0 +1,307 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="QThoi (generated)" id="1713082635664-3">
+        <createTable tableName="db_booking">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="db_bookingPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="check_in" type="datetime"/>
+            <column name="check_out" type="datetime"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="end_date" type="datetime"/>
+            <column name="gender" type="INT"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="payment_method" type="INT"/>
+            <column name="payment_status" type="BIT"/>
+            <column name="phone" type="VARCHAR(255)"/>
+            <column name="price" type="INT"/>
+            <column name="start_date" type="datetime"/>
+            <column name="hotel_id" type="BIGINT"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-4">
+        <createTable tableName="db_booking_detail">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="db_booking_detailPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="air_condition" type="BIT"/>
+            <column name="bacony" type="BIT"/>
+            <column name="bar" type="BIT"/>
+            <column name="breakfast" type="BIT"/>
+            <column name="hot_bath_room" type="BIT"/>
+            <column name="kitchenette" type="BIT"/>
+            <column name="number_of_bed" type="INT"/>
+            <column name="pool" type="BIT"/>
+            <column name="price" type="INT"/>
+            <column name="room_number" type="INT"/>
+            <column name="root_top" type="BIT"/>
+            <column name="sea_view" type="BIT"/>
+            <column name="size" type="VARCHAR(255)"/>
+            <column name="steam_room" type="BIT"/>
+            <column name="wifi" type="BIT"/>
+            <column name="hotel_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-5">
+        <createTable tableName="db_hotel">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="db_hotelPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="TEXT"/>
+            <column name="imagses" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="stars" type="DOUBLE PRECISION"/>
+            <column name="total_review" type="DOUBLE PRECISION"/>
+            <column name="address_id" type="BIGINT"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-6">
+        <createTable tableName="db_images">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="db_imagesPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="link" type="VARCHAR(255)"/>
+            <column name="kind_room_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-7">
+        <createTable tableName="db_kind_room">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="db_kind_roomPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="number_of_bed" type="INT"/>
+            <column name="number_of_people" type="INT"/>
+            <column name="price" type="INT"/>
+            <column name="room_number" type="INT"/>
+            <column name="sale_off" type="INT"/>
+            <column name="size" type="VARCHAR(255)"/>
+            <column name="hotel_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-8">
+        <createTable tableName="is_save">
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hotel_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-9">
+        <addColumn tableName="db_service">
+            <column name="air_condition" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-10">
+        <addColumn tableName="db_service">
+            <column name="bacony" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-11">
+        <addColumn tableName="db_service">
+            <column name="bar" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-12">
+        <addColumn tableName="db_service">
+            <column name="breakfast" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-13">
+        <addColumn tableName="db_user">
+            <column name="gender" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-14">
+        <addColumn tableName="db_service">
+            <column name="hot_bath_room" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-15">
+        <addColumn tableName="db_service">
+            <column name="id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-16">
+        <addColumn tableName="db_service">
+            <column name="kind_room" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-17">
+        <addColumn tableName="db_service">
+            <column name="kitchenette" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-18">
+        <addColumn tableName="db_user">
+            <column name="member_ship" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-19">
+        <addColumn tableName="db_user">
+            <column name="point" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-20">
+        <addColumn tableName="db_service">
+            <column name="pool" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-21">
+        <addColumn tableName="db_service">
+            <column name="root_top" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-22">
+        <addColumn tableName="db_service">
+            <column name="sea_view" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-23">
+        <addColumn tableName="db_service">
+            <column name="steam_room" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-24">
+        <addColumn tableName="db_service">
+            <column name="wifi" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-25">
+        <createIndex indexName="IX_db_servicePK" tableName="db_service" unique="true">
+            <column name="id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-26">
+        <addForeignKeyConstraint baseColumnNames="hotel_id" baseTableName="db_kind_room" constraintName="FK669jilpwqfelb6611kkmkhoau" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_hotel" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-27">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="is_save" constraintName="FK81uqrtu70ud4fnn7gfin8649p" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_user" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-28">
+        <addForeignKeyConstraint baseColumnNames="kind_room_id" baseTableName="db_images" constraintName="FK9iabi3ujoat24kwbn92sr42tm" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_kind_room" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-29">
+        <addForeignKeyConstraint baseColumnNames="kind_room" baseTableName="db_service" constraintName="FK9vjwxx4kd1udgfw8qxnw6jm9q" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_kind_room" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-30">
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="db_hotel" constraintName="FKafwktf4pbwa5nc0eivvn94sb6" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_address" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-31">
+        <addForeignKeyConstraint baseColumnNames="hotel_id" baseTableName="db_booking" constraintName="FKm771v6k6m71ui0f0sbmcwp5pd" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_hotel" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-32">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="db_hotel" constraintName="FKmj9kcwtb8v3y9j5rfjtm7w28x" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_user" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-33">
+        <addForeignKeyConstraint baseColumnNames="hotel_id" baseTableName="db_booking_detail" constraintName="FKo1pk2wvyog2ta4kdk2oix7rtn" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_hotel" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-34">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="db_booking" constraintName="FKp7b8ci5qj382jbaxxdtmeiwbb" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_user" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-35">
+        <addForeignKeyConstraint baseColumnNames="hotel_id" baseTableName="is_save" constraintName="FKpaj99irhjje3wijx0b3t67eyu" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_hotel" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-47">
+        <dropColumn columnName="banner_path" tableName="db_service"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-48">
+        <dropColumn columnName="hotline" tableName="db_service"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-49">
+        <dropColumn columnName="lang" tableName="db_service"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-50">
+        <dropColumn columnName="logo_path" tableName="db_service"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-51">
+        <dropColumn columnName="service_name" tableName="db_service"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-52">
+        <dropColumn columnName="settings" tableName="db_service"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713082635664-53">
+        <dropColumn columnName="tenant_id" tableName="db_service"/>
+    </changeSet>
+</databaseChangeLog>

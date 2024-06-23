@@ -1,0 +1,70 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="QThoi (generated)" id="1713253128419-3">
+        <addColumn tableName="db_hotel">
+            <column name="address" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-4">
+        <addColumn tableName="db_hotel">
+            <column name="district_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-5">
+        <addColumn tableName="db_hotel">
+            <column name="images" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-6">
+        <addColumn tableName="db_hotel">
+            <column name="province_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-7">
+        <addColumn tableName="db_hotel">
+            <column name="ward_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-8">
+        <addForeignKeyConstraint baseColumnNames="ward_id" baseTableName="db_hotel" constraintName="FK9llugqruiuuosh2hta3y6m0by" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_nation" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-9">
+        <addForeignKeyConstraint baseColumnNames="district_id" baseTableName="db_hotel" constraintName="FKhnj78f9o6duorce26pvavavvx" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_nation" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-10">
+        <addForeignKeyConstraint baseColumnNames="province_id" baseTableName="db_hotel" constraintName="FKpd01cumft8bpx1yu7ncvjtcqi" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_nation" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-11">
+        <dropForeignKeyConstraint baseTableName="db_hotel" constraintName="FKafwktf4pbwa5nc0eivvn94sb6"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-12">
+        <dropForeignKeyConstraint baseTableName="db_user_base_permission_group" constraintName="FKcyyhydyva3pypgsw4eiosp0uu"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-13">
+        <dropForeignKeyConstraint baseTableName="db_service" constraintName="FKkhwfkupqyq24cbofkqutn1hw0"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-14">
+        <dropForeignKeyConstraint baseTableName="db_user_base_permission_group" constraintName="FKsi1dkd5ffr815hndstl390p2x"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-15">
+        <dropUniqueConstraint constraintName="IX_db_servicePK" tableName="db_service"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-16">
+        <dropTable tableName="db_user_base_permission_group"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-23">
+        <dropColumn columnName="account_id" tableName="db_service"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-24">
+        <dropColumn columnName="address_id" tableName="db_hotel"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-25">
+        <dropColumn columnName="imagses" tableName="db_hotel"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-1">
+        <dropPrimaryKey tableName="db_service"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1713253128419-2">
+        <addPrimaryKey columnNames="id" constraintName="db_servicePK" tableName="db_service"/>
+    </changeSet>
+</databaseChangeLog>

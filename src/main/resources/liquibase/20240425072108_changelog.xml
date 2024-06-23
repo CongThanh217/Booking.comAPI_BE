@@ -1,0 +1,32 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="QThoi (generated)" id="1714029692550-1">
+        <addColumn tableName="db_booking_detail">
+            <column name="booking_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1714029692550-2">
+        <addColumn tableName="db_kind_room">
+            <column name="empty_room" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1714029692550-3">
+        <addForeignKeyConstraint baseColumnNames="booking_id" baseTableName="db_booking_detail" constraintName="FKo1p3n7q46w086nfckhyr3b2xi" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="db_booking" validate="true"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1714029692550-4">
+        <dropForeignKeyConstraint baseTableName="db_booking_detail" constraintName="FKo1pk2wvyog2ta4kdk2oix7rtn"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1714029692550-11">
+        <dropColumn columnName="hotel_id" tableName="db_booking_detail"/>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1714378079809-1">
+        <addColumn tableName="db_booking">
+            <column name="booking_code" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="QThoi (generated)" id="1714378079809-2">
+        <addColumn tableName="db_booking_detail">
+            <column name="room_name" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>
